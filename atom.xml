@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://tinytoy.github.io/atom.xml" rel="self"/>
+  <link href="http://tinytoy.github.io/"/>
+  <updated>2014-05-28T17:54:01+08:00</updated>
+  <id>http://tinytoy.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello, 欢迎来到大众东西]]></title>
+    <link href="http://tinytoy.github.io/blog/2014/05/28/hello-tinytoy/"/>
+    <updated>2014-05-28T17:11:47+08:00</updated>
+    <id>http://tinytoy.github.io/blog/2014/05/28/hello-tinytoy</id>
+    <content type="html"><![CDATA[<p>大众东西——大多数人点赞的东西。</p>
+
+<p>这里收集了大多数人都喜欢的东西。上榜条件为：好看到32个赞；好吃到不能停；好玩到不想停；用过都说好的。<br/>
+无论是腐女宅男，闷骚码农，还是文艺青年，资深吃货，总能在这里找到你喜欢的东西。大家喜欢，才是真的喜欢。</p>
+
+<p>长时期、不定期更新。</p>
+]]></content>
+  </entry>
+  
+</feed>

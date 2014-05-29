@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hello, 欢迎来到大众东西"
+title: "欢迎来到大众东西，找到让你点赞的玩意"
 date: 2014-05-28 17:11:47 +0800
 comments: true
 categories: [Tinytoy]

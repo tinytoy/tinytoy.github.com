@@ -2,18 +2,19 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://tinytoy.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://like.lessfun.com
+title: 大众东西
+subtitle: 沉迷的大多数
+author: TinyToy
 simple_search: https://www.google.com/search
-description:
+description: 无论你是点赞狂魔，资深吃货，还是宅男腐女、码农文青，在这里，你总能找到让你爱不释手的东西，因为，这里陈列的是大众喜欢的东西，收集了大多数人沉迷赞同的玩意
+keywords: 导购, 吃货, 大众, 点赞, 舌尖
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
 # http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
 # Additionally, %o will give you the ordinal representation of the day
-date_format: "ordinal"
+date_format: "%F, %a"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
 subscribe_rss: /atom.xml
@@ -43,14 +44,14 @@ pygments: false # default python pygments have been replaced by pygments.rb
 
 paginate: 10          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
-recent_posts: 5       # Posts in the sidebar Recent Posts section
-excerpt_link: "Read on &rarr;"  # "Continue reading" link text at the bottom of excerpted articles
+recent_posts: 7       # Posts in the sidebar Recent Posts section
+excerpt_link: "继续阅读 &rarr;"  # "Continue reading" link text at the bottom of excerpted articles
 
 titlecase: true       # Converts page and post titles to titlecase
 
 # list each of the sidebar modules you want to include, in the order you want them to appear.
 # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
-default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html]
+default_asides: [custom/asides/about.html, custom/asides/category_list.html, asides/recent_posts.html, asides/github.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html, custom/asides/recent_comments.html]
 
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.
@@ -70,7 +71,7 @@ github_skip_forks: true
 
 # Twitter
 twitter_user:
-twitter_tweet_button: true
+twitter_tweet_button: false
 
 # Google +1
 google_plus_one: false
@@ -93,8 +94,20 @@ delicious_count: 3
 disqus_short_name:
 disqus_show_comment_count: false
 
+# duoshuo comments
+duoshuo_comments: true
+duoshuo_short_name: tinytoy
+
+# duoshuo comments in aside
+duoshuo_asides_num: 10
+duoshuo_asides_avatars: 1
+duoshuo_asides_time: 1
+duoshuo_asides_title: 1
+duoshuo_asides_admin: 1
+duoshuo_asides_length: 20
+
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-46115267-2
 
 # Facebook Like
 facebook_like: false

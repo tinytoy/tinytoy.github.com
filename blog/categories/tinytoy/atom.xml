@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Tinytoy | My Octopress Blog]]></title>
-  <link href="http://tinytoy.github.io/blog/categories/tinytoy/atom.xml" rel="self"/>
-  <link href="http://tinytoy.github.io/"/>
-  <updated>2014-05-28T17:54:01+08:00</updated>
-  <id>http://tinytoy.github.io/</id>
+  <title><![CDATA[Category: Tinytoy | 大众东西]]></title>
+  <link href="http://like.lessfun.com/blog/categories/tinytoy/atom.xml" rel="self"/>
+  <link href="http://like.lessfun.com/"/>
+  <updated>2014-05-29T23:30:12+08:00</updated>
+  <id>http://like.lessfun.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[TinyToy]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,13 +15,34 @@
   
   <entry>
     <title type="html"><![CDATA[Hello, 欢迎来到大众东西]]></title>
-    <link href="http://tinytoy.github.io/blog/2014/05/28/hello-tinytoy/"/>
+    <link href="http://like.lessfun.com/blog/2014/05/28/hello-tinytoy/"/>
     <updated>2014-05-28T17:11:47+08:00</updated>
-    <id>http://tinytoy.github.io/blog/2014/05/28/hello-tinytoy</id>
-    <content type="html"><![CDATA[<p>大众东西——大多数人点赞的东西。</p>
+    <id>http://like.lessfun.com/blog/2014/05/28/hello-tinytoy</id>
+    <content type="html"><![CDATA[<p>大众东西——大家都点赞的东西。</p>
 
-<p>这里收集了大多数人都喜欢的东西。上榜条件为：好看到32个赞；好吃到不能停；好玩到不想停；用过都说好的。<br/>
-无论是腐女宅男，闷骚码农，还是文艺青年，资深吃货，总能在这里找到你喜欢的东西。大家喜欢，才是真的喜欢。</p>
+<p>无论你是点赞狂魔，资深吃货，还是宅男腐女、码农文青，在这里，你总能找到让你爱不释手的东西，因为，这里陈列的是大众喜欢的东西，收集了大多数人沉迷赞同的玩意。</p>
+
+<p>上榜条件包括但不限于：</p>
+
+<ul>
+<li>好看到狂点赞</li>
+<li>好吃到不能停</li>
+<li>好玩到不思蜀</li>
+<li>好用到难自拔</li>
+</ul>
+
+
+<p>收集系列包括但不限于：</p>
+
+<ul>
+<li>舌尖上的知乎</li>
+<li>文艺们的豆瓣</li>
+<li>码农们的奢侈</li>
+<li>宅男家的福利</li>
+</ul>
+
+
+<p>欢迎在大众喜欢的东西里，找到你想要的。大家喜欢，才是真的喜欢。乌合之众，自有道理。</p>
 
 <p>长时期、不定期更新。</p>
 ]]></content>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[大众东西]]></title>
+  <title><![CDATA[大众东西 - 乌合之众的乌合之赞]]></title>
   <link href="http://like.lessfun.com/atom.xml" rel="self"/>
   <link href="http://like.lessfun.com/"/>
-  <updated>2014-05-30T00:21:50+08:00</updated>
+  <updated>2014-05-30T13:53:45+08:00</updated>
   <id>http://like.lessfun.com/</id>
   <author>
     <name><![CDATA[TinyToy]]></name>
@@ -20,7 +20,7 @@
     <id>http://like.lessfun.com/blog/2014/05/28/hello-tinytoy</id>
     <content type="html"><![CDATA[<p>大众东西——大家都点赞的东西。</p>
 
-<p>无论你是点赞狂魔，资深吃货，还是宅男腐女、码农文青，在这里，你总能找到让你爱不释手的东西，因为，这里陈列的是大众喜欢的东西，收集了大多数人沉迷赞同的玩意。</p>
+<p>无论你是点赞狂魔，资深吃货，还是宅男腐女、码农文青，在这里，你总能找到让你爱不释手、停不住口的东西，因为，这里陈列的是大众喜欢的东西，收集了大多数人沉迷赞同的玩意。</p>
 
 <p>上榜条件包括但不限于：</p>
 
@@ -42,7 +42,7 @@
 </ul>
 
 
-<p>欢迎在大众喜欢的东西里，找到你想要的。大家喜欢，才是真的喜欢。乌合之众，自有道理。</p>
+<p>欢迎在乌合之众的乌合之赞的乌合之物里，找到你想要的东西。大家喜欢，才是真的喜欢。</p>
 
 <p>长时期、不定期更新。</p>
 ]]></content>

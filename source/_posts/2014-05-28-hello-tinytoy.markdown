@@ -3,8 +3,8 @@ layout: post
 title: "欢迎来到大众点赞，找到让你沉迷的玩意"
 date: 2014-05-28 17:11:47 +0800
 comments: true
-categories: [Tinytoy]
-tags: [Tinytoy]
+categories: [大众点赞]
+tags: [tinytoy, zhihu]
 keywords: 大众点赞, 舌尖上, 知乎, 吃货, 文青, 码农, 
 description: 无论你是点赞狂魔，资深吃货，还是宅男腐女、码农文青，你总能在这找到让你爱不释手的东西，因为这里陈列了大众点赞的东西，收集了大多数人沉迷的玩意。
 ---

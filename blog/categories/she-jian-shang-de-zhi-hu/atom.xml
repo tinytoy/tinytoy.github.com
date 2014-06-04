@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 舌尖上的知乎 | 大众点赞 - 沉迷的大多数]]></title>
+  <link href="http://like.lessfun.com/blog/categories/she-jian-shang-de-zhi-hu/atom.xml" rel="self"/>
+  <link href="http://like.lessfun.com/"/>
+  <updated>2014-06-04T03:17:14+08:00</updated>
+  <id>http://like.lessfun.com/</id>
+  <author>
+    <name><![CDATA[TinyToy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[舌尖上的知乎：那些好吃到吐血的零食推荐]]></title>
+    <link href="http://like.lessfun.com/blog/2014/06/04/recommended-tasty-snacks-from-zhihu/"/>
+    <updated>2014-06-04T03:08:01+08:00</updated>
+    <id>http://like.lessfun.com/blog/2014/06/04/recommended-tasty-snacks-from-zhihu</id>
+    <content type="html"><![CDATA[<p><img src="/images/2014/06/like_zhihu_food_title.png" alt="知乎上好吃的零食" /></p>
+
+<!--more-->
+
+]]></content>
+  </entry>
+  
+</feed>

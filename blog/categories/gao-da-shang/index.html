@@ -4,15 +4,15 @@
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
+  <script src="/js/vendor/modernizr.js"></script>
   <meta charset="utf-8">
-  <title>Category: 高大上 - 大众点赞 - 沉迷的大多数</title>
+  <title>Category: 高大上 | 大众点赞 - 沉迷的大多数</title>
   <meta name="author" content="TinyToy">
 
   
   <meta name="description" content="Category: 高大上">
   
 
-  <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,13 +22,26 @@
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="大众点赞 - 沉迷的大多数" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+
+  <script src="/js/vendor/jquery.js"></script>
+  <script src="/js/vendor/fastclick.js"></script>
+
+  <script src="/js/foundation.min.js"></script>
+
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+
+
+  <script>
+
+  $(document).ready(function(){
+    $(document).foundation();
+  });
+
+  </script>
+
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<!--<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">-->
-<!--<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">-->
+<link href="http://fonts.useso.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.useso.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
   <script type="text/javascript">
@@ -46,47 +59,76 @@
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">大众点赞 - 沉迷的大多数</a></h1>
+<body  >
+  <header role="banner" class="top-header"><hgroup>
+  <h1 class="text-center">
+  	<a href="/">大众点赞 - 沉迷的大多数</a>
+  </h1>
   
-    <h2>乌合之众的乌合之赞</h2>
+	  <h3 class="subtitle text-center">
+	  	 乌合之众的乌合之赞
+	  </h3>
   
 </hgroup>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <nav role="navigation"><ul class="subscription hide" data-subscription="rss">
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:like.lessfun.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">首页</a></li>
-  <li><a href="/blog/archives">所有</a></li>
-  <li><a href="/blog/categories/chi-huo/">吃货</a></li>
-  <li><a href="/blog/categories/wen-yi/">文艺</a></li>
-  <li><a href="/blog/2014/05/28/hello-tinytoy/">关于</a></li>
-</ul>
 
+
+
+<div class="sticky" data-options="">
+
+  <nav class="top-bar" data-topbar>
+
+    <section class="top-bar-section">
+
+      <ul class="main-navigation left">
+
+          <li><a href="/">首页</a></li>
+
+          <li><a href="/blog/categories/zi-xun">资讯</a></li>
+          <li><a href="/blog/categories/bian-cheng">编程</a></li>
+          <li><a href="/blog/categories/ji-qiao">技巧</a></li>
+          <li><a href="/blog/categories/li-cai">理财</a></li>
+          <li><a href="/blog/categories/mei-shi">什么好吃</a></li>
+          <li><a href="/blog/categories/hao-wan">哪里好玩</a></li>
+
+          <li class="has-dropdown">
+            <a href="/video">今晚看啥</a>
+
+            <ul class="dropdown">
+              <li><a href="/video/imdb-top-250">IMDB Top 250</a></li>
+              <li><a href="/video/douban-top-250">豆瓣 Top 250</a></li>
+              <li><a href="/video/mtime-top-250">时光网 Top 250</a></li>
+            </ul>
+
+          </li>
+          
+          <li><a href="/blog/archives">所有文章</a></li>
+          <li><a href="/about">关于</a></li>
+          <li><a href="/atom.xml" rel="subscribe-rss" title="RSS订阅">RSS</a></li>
+      </ul>
+
+    </section>
+  </nav>
+
+</div>
 </nav>
   <div id="main">
-    <div id="content">
-      <div>
-<article role="article">
-  
-  <header>
-    <h1 class="entry-title">Category: 高大上</h1>
+    <div id="content" class="row">
+        <div class="small-12 medium-12 large-8 columns">
+  <article role="article">
     
-  </header>
-  
-  <div id="blog-archives" class="category">
+    <header class="page-header">
+      <h1 class="page-title">Category: 高大上</h1>
+      
+      <!---->
+    </header>
+    
+    <div id="blog-archives" class="category">
 
 
 
@@ -95,11 +137,11 @@
 
 <article>
   
-<h1><a href="/blog/2014/06/10/stuff-less-than-100-yuan/">100元以下，很少见但高大上的东西(1)</a></h1>
-<time datetime="2014-06-10T01:50:33+08:00" pubdate><span class='month'>Jun</span> <span class='day'>10</span> <span class='year'>2014</span></time>
+<h1 class="entry-title"><a href="/blog/2014/06/10/stuff-less-than-100-yuan/">100元以下，很少见但高大上的东西(1)</a></h1>
+<time datetime="2014-06-10T01:50:33+08:00" pubdate><i class="fa fa-calendar-o"></i> <span class='month'>Jun</span> <span class='day'>10,</span> <span class='year'>2014</span></time>
 
 <footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/wen-yi/'>文艺</a>, <a class='category' href='/blog/categories/gao-da-shang/'>高大上</a></span>
+  <span class="categories"><i class="fa fa-tag"></i> Posted in <a class='category' href='/blog/categories/wen-yi/'>文艺</a>, <a class='category' href='/blog/categories/gao-da-shang/'>高大上</a></span>
 </footer>
 
 
@@ -107,18 +149,20 @@
 
 </div>
 
+    
+  </article>
   
-</article>
-
-</div>
-
-<aside class="sidebar">
+  </div><!--.columns-->
   
-    <section>
-<h1>关于</h1>
-<p>分享大家点赞的东西。<br>你喜欢，所以我喜欢。<br>大多数沉迷，所以我沉迷。<br>欢迎来到大众点赞，找到让你沉迷的玩意。</p>
+  <aside class="sidebar small-12 medium-12 large-4 columns">
+    
+      <section>
+  <h1>关于</h1>
+  <p>
+  	你喜欢，所以我喜欢。<br>
+	大多数沉迷，所以你沉迷。
+  </p>
 </section>
-
 <section>
   <h1>分类</h1>
   <ul id="categories">
@@ -132,7 +176,7 @@
   </ul>
 </section>
 <section>
-  <h1>最近发表</h1>
+  <h1>最近发布 <i class="fa fa-edit"></i></h1>
   <ul id="recent_posts">
     
       <li class="post">
@@ -171,19 +215,27 @@ ds.charset = 'UTF-8';
 <!--多说js加载结束，一个页面只需要加载一次 -->
 </section>
 
+    
+  </aside>
   
-</aside>
 
 
     </div>
   </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - TinyToy -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  <footer role="contentinfo"><p class="text-center">
+  <span class="copyright">
+  	Copyright &copy; 2014 by TinyToy
+  </span>
+
+  <span class="credit">
+  	Powered by <a href="http://octopress.org">Octopress</a> & <a href="https://github.com/annejohnson/octofound">Octofound</a><br />
+  	Theme by <a href="http://annekjohnson.com">Anne Johnson</a>
+  </span>
 </p>
 
 </footer>
   
+
 
 
 

@@ -1,6 +1,10 @@
-<hgroup>
-  <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
+<hgroup{% if site.header_image %} style="background-image:url('{{ site.header_image }}');"{% endif %}>
+  <h1 class="text-center">
+  	<a href="{{ root_url }}/">{{ site.title }}</a>
+  </h1>
   {% if site.subtitle %}
-    <h2>{{ site.subtitle }}</h2>
+	  <h3 class="subtitle text-center">
+	  	 {{ site.subtitle }}
+	  </h3>
   {% endif %}
 </hgroup>

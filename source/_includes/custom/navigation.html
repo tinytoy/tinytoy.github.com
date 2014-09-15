@@ -1,7 +1,39 @@
-<ul class="main-navigation">
-  <li><a href="{{ root_url }}/">首页</a></li>
-  <li><a href="{{ root_url }}/blog/archives">所有</a></li>
-  <li><a href="{{ root_url }}/blog/categories/chi-huo/">吃货</a></li>
-  <li><a href="{{ root_url }}/blog/categories/wen-yi/">文艺</a></li>
-  <li><a href="{{ root_url }}/blog/2014/05/28/hello-tinytoy/">关于</a></li>
-</ul>
+{% if site.fixed_navigation %}
+<div class="sticky" data-options="">
+{% endif %}
+  <nav class="top-bar" data-topbar>
+
+    <section class="top-bar-section">
+
+      <ul class="main-navigation left">
+
+          <li{% if page.url == '/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/">首页</a></li>
+
+          <li{% if page.url == '/blog/categories/zi-xun/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/zi-xun">资讯</a></li>
+          <li{% if page.url == '/blog/categories/bian-cheng/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/bian-cheng">编程</a></li>
+          <li{% if page.url == '/blog/categories/ji-qiao/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/ji-qiao">技巧</a></li>
+          <li{% if page.url == '/blog/categories/li-cai/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/li-cai">理财</a></li>
+          <li{% if page.url == '/blog/categories/mei-shi/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/mei-shi">什么好吃</a></li>
+          <li{% if page.url == '/blog/categories/hao-wan/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/hao-wan">哪里好玩</a></li>
+
+          <li class="has-dropdown{% if page.url == '/video/index.html' or page.url == '/video/imdb-top-250/index.html' or page.url == '/video/douban-top-250/index.html' or page.url == '/video/mtime-top-250/index.html' %} active{% endif %}">
+            <a href="{{ root_url }}/video">今晚看啥</a>
+
+            <ul class="dropdown">
+              <li><a href="{{ root_url }}/video/imdb-top-250">IMDB Top 250</a></li>
+              <li><a href="{{ root_url }}/video/douban-top-250">豆瓣 Top 250</a></li>
+              <li><a href="{{ root_url }}/video/mtime-top-250">时光网 Top 250</a></li>
+            </ul>
+
+          </li>
+          
+          <li{% if page.url == '/blog/archives/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/archives">所有文章</a></li>
+          <li{% if page.url == '/about/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/about">关于</a></li>
+          <li><a href="{{ site.subscribe_rss }}" rel="subscribe-rss" title="RSS订阅">RSS</a></li>
+      </ul>
+
+    </section>
+  </nav>
+{% if site.fixed_navigation %}
+</div>
+{% endif %}

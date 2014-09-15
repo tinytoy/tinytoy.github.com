@@ -1,4 +1,5 @@
 ---
+published: false
 layout: post
 title: "欢迎来到大众点赞，找到让你沉迷的玩意"
 date: 2014-05-28 17:11:47 +0800

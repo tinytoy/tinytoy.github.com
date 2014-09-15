@@ -3,13 +3,13 @@ layout: default
 single: true
 ---
 
-<div>
+<div class="small-12 medium-12 {% if page.sidebar == false %}large-10 large-centered {% elsif page.sidebar_left %}large-8 large-push-4 {% else %}large-9 {% endif %}columns">
 <article class="hentry" role="article">
   {% include article.html %}
   <footer>
     <p class="meta">
       {% include post/author.html %}
-      {% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
+      <!-- {% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %} -->
       {% include post/categories.html %}
     </p>
     {% unless page.sharing == false %}
@@ -39,7 +39,7 @@ single: true
 {% endif %}
 </div>
 {% unless page.sidebar == false %}
-<aside class="sidebar">
+<aside class="sidebar small-12 medium-12{% if page.sidebar_left %} large-pull-8{% endif %} large-3 columns">
   {% if site.post_asides.size %}
     {% include_array post_asides %}
   {% else %}

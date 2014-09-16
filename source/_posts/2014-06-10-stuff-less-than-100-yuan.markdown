@@ -3,9 +3,9 @@ layout: post
 title: "100元以下，很少见但高大上的东西(1)"
 date: 2014-06-10 01:50:33 +0800
 comments: true
-categories: [文艺, 高大上]
+categories: [玩意]
 tags: [zhihu, stuff]
-keywords: 文艺青年, 高大上, 知乎, 点赞, 小清新
+keywords: 文艺青年, 高大上, 知乎, 玩意, 小清新
 description: 知乎上推荐的100元以下，很少见但高大上的东西，包括九口山笔记本、无印良品文具盒、OPI果味护手霜、rio薄荷糖等。
 ---
 

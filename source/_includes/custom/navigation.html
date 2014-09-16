@@ -10,11 +10,11 @@
           <li{% if page.url == '/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/">首页</a></li>
 
           <li{% if page.url == '/blog/categories/zi-xun/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/zi-xun">资讯</a></li>
-          <li{% if page.url == '/blog/categories/bian-cheng/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/bian-cheng">编程</a></li>
+          <li{% if page.url == '/blog/categories/kai-fa/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/kai-fa">开发</a></li>
           <li{% if page.url == '/blog/categories/ji-qiao/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/ji-qiao">技巧</a></li>
           <li{% if page.url == '/blog/categories/li-cai/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/li-cai">理财</a></li>
-          <li{% if page.url == '/blog/categories/mei-shi/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/mei-shi">什么好吃</a></li>
-          <li{% if page.url == '/blog/categories/hao-wan/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/hao-wan">哪里好玩</a></li>
+          <li{% if page.url == '/blog/categories/wan-yi/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/wan-yi">玩意</a></li>
+          <li{% if page.url == '/food/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/food">什么好吃</a></li>
 
           <li class="has-dropdown{% if page.url == '/video/index.html' or page.url == '/video/imdb-top-250/index.html' or page.url == '/video/douban-top-250/index.html' or page.url == '/video/mtime-top-250/index.html' %} active{% endif %}">
             <a href="{{ root_url }}/video">今晚看啥</a>
@@ -27,8 +27,10 @@
 
           </li>
           
+          <li{% if page.url == '/blog/categories/du-shu/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/du-shu">读书如抽丝</a></li>
           <li{% if page.url == '/blog/archives/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/archives">所有文章</a></li>
           <li{% if page.url == '/about/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/about">关于</a></li>
+          <li{% if page.url == '/app/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/app">App</a></li>
           <li><a href="{{ site.subscribe_rss }}" rel="subscribe-rss" title="RSS订阅">RSS</a></li>
       </ul>
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: 文艺 | 大众点赞]]></title>
-  <link href="http://like.lessfun.com/blog/categories/wen-yi/atom.xml" rel="self"/>
+  <title><![CDATA[Category: 玩意 | 大众点赞]]></title>
+  <link href="http://like.lessfun.com/blog/categories/wan-yi/atom.xml" rel="self"/>
   <link href="http://like.lessfun.com/"/>
-  <updated>2014-09-16T14:17:13+08:00</updated>
+  <updated>2014-09-16T23:24:20+08:00</updated>
   <id>http://like.lessfun.com/</id>
   <author>
     <name><![CDATA[TinyToy]]></name>

@@ -3,12 +3,12 @@
 # ----------------------- #
 
 url: http://like.lessfun.com
-title: 大众点赞 - 沉迷的大多数
-subtitle: 乌合之众的乌合之赞
+title: 大众点赞
+subtitle: 沉迷的大多数
 author: TinyToy
 # simple_search: https://www.google.com/search
 description: 无论你是点赞狂魔，资深吃货，还是宅男腐女、码农文青，你总能在这找到让你喜欢的东西，因为这里陈列了大众点赞的东西，收集了让大多数人沉迷的玩意
-keywords: 导购, 吃货, 大众, 点赞, 舌尖
+keywords: 电影, 美食, 大众, 点赞, 开发
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in

@@ -4,7 +4,7 @@
   <title><![CDATA[大众点赞 - 沉迷的大多数]]></title>
   <link href="http://like.lessfun.com/atom.xml" rel="self"/>
   <link href="http://like.lessfun.com/"/>
-  <updated>2014-09-18T14:16:14+08:00</updated>
+  <updated>2014-09-18T17:29:00+08:00</updated>
   <id>http://like.lessfun.com/</id>
   <author>
     <name><![CDATA[TinyToy]]></name>
@@ -12,6 +12,176 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Objective C提高开发效率的10个实用的宏定义]]></title>
+    <link href="http://like.lessfun.com/blog/2014/09/18/10-useful-macros-in-objective-c-develop/"/>
+    <updated>2014-09-18T15:59:36+08:00</updated>
+    <id>http://like.lessfun.com/blog/2014/09/18/10-useful-macros-in-objective-c-develop</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://like.lessfun.com/images/develop/lessfun_c_macros.gif" title="c macros" alt="c macros"></p>
+
+<p>在类C语言中，宏的存在一直具有争议性，支持者觉得宏可以大大提高效率，使代码更简洁，用起来得心应手；反对者则认为，宏使得变量失去了类型，并且难以调试，降低了代码的可读性。这里我不准备探讨宏本身的意义，只想说明，在使用Objective C开发iOS项目时，这10个实用的宏，可以大大地提高你的开发效率，并且不影响可读性。</p>
+
+<!--more-->
+
+
+<p>Objective C的语法十分冗余，命名也是长不忍睹，虽然有自动补全，但是写起来还是很不方便，而宏定义就是为解决这些烦恼而生。如果你是宏定义一生黑，也可以用函数替换。</p>
+
+<p>以下宏定义保存在一个文件<code>YourMacro.h</code>中，并且在预编译头文件xx-Prefix.pch中#import，就可以在全局工程中使用了。</p>
+
+<h3>Device Info</h3>
+
+<p>判断设备类型：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'>    <span class="err">#</span><span class="n">define</span> <span class="n">IsIPad</span>   <span class="p">(</span><span class="n">UI_USER_INTERFACE_IDIOM</span><span class="p">()</span> <span class="o">==</span> <span class="n">UIUserInterfaceIdiomPad</span><span class="p">)</span>
+</span><span class='line'>    <span class="err">#</span><span class="n">define</span> <span class="n">IsIPhone</span> <span class="p">(</span><span class="n">UI_USER_INTERFACE_IDIOM</span><span class="p">()</span> <span class="o">==</span> <span class="n">UIUserInterfaceIdiomPhone</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>System Version</h3>
+
+<p>获取系统版本信息：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'>    <span class="err">#</span><span class="n">define</span> <span class="n">SystemVersionLessThan</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="p">([[[</span><span class="n">UIDevice</span> <span class="n">currentDevice</span><span class="p">]</span> <span class="n">systemVersion</span><span class="p">]</span> <span class="n">compare</span><span class="o">:</span><span class="n">v</span> <span class="n">options</span><span class="o">:</span><span class="n">NSNumericSearch</span><span class="p">]</span> <span class="o">==</span> <span class="n">NSOrderedAscending</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>例如，判断iOS版本，是否低于iOS7：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">SystemVersionLessThan</span><span class="p">(</span><span class="err">@</span><span class="s">&quot;7.0&quot;</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>UI</h3>
+
+<p>判断是否为高清屏：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'>    <span class="err">#</span><span class="n">define</span> <span class="n">IsRetina</span>  <span class="p">([[</span><span class="n">UIScreen</span> <span class="n">mainScreen</span><span class="p">]</span> <span class="n">respondsToSelector</span><span class="o">:</span><span class="err">@</span><span class="n">selector</span><span class="p">(</span><span class="n">scale</span><span class="p">)]</span> <span class="o">&amp;&amp;</span> <span class="p">[[</span><span class="n">UIScreen</span> <span class="n">mainScreen</span><span class="p">]</span> <span class="n">scale</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Color</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'>    <span class="err">#</span><span class="n">define</span> <span class="n">Color_RGB</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">colorWithRed</span><span class="o">:</span><span class="n">r</span> <span class="o">/</span> <span class="mf">255.0</span> <span class="n">green</span><span class="o">:</span><span class="n">g</span> <span class="o">/</span> <span class="mf">255.0</span> <span class="n">blue</span><span class="o">:</span><span class="n">b</span> <span class="o">/</span> <span class="mf">255.0</span> <span class="n">alpha</span><span class="o">:</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'>  <span class="err">#</span><span class="n">define</span> <span class="n">Color_RGBA</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">colorWithRed</span><span class="o">:</span><span class="n">r</span> <span class="o">/</span> <span class="mf">255.0</span> <span class="n">green</span><span class="o">:</span><span class="n">g</span> <span class="o">/</span> <span class="mf">255.0</span> <span class="n">blue</span><span class="o">:</span><span class="n">b</span> <span class="o">/</span> <span class="mf">255.0</span> <span class="n">alpha</span><span class="o">:</span><span class="n">a</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">//用法</span>
+</span><span class='line'>  <span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="n">Color_RGB</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>NSString</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'>    <span class="err">#</span><span class="n">define</span> <span class="n">NSStringFromInt</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="p">[</span><span class="n">NSString</span> <span class="n">stringWithFormat</span><span class="o">:</span><span class="err">@</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">d</span><span class="p">)]</span>
+</span><span class='line'>  <span class="err">#</span><span class="n">define</span> <span class="n">NSStringFromLong</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="p">[</span><span class="n">NSString</span> <span class="n">stringWithFormat</span><span class="o">:</span><span class="err">@</span><span class="s">&quot;%lld&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">d</span><span class="p">)]</span>
+</span><span class='line'>  <span class="err">#</span><span class="n">define</span> <span class="n">NSStringConcat</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">)</span> <span class="p">[</span><span class="n">NSString</span> <span class="n">stringWithFormat</span><span class="o">:</span><span class="err">@</span><span class="s">&quot;%@%@&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">str1</span><span class="p">),</span> <span class="p">(</span><span class="n">str2</span><span class="p">)]</span>
+</span><span class='line'>  <span class="err">#</span><span class="n">define</span> <span class="n">NSStringFromNSData</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">[[</span><span class="n">NSString</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithData</span><span class="o">:</span><span class="n">data</span> <span class="n">encoding</span><span class="o">:</span><span class="n">NSUTF8StringEncoding</span><span class="p">]</span>
+</span><span class='line'>  <span class="err">#</span><span class="n">define</span> <span class="n">NSDataFromNSString</span><span class="p">(</span><span class="n">str</span><span class="p">)</span> <span class="p">[</span><span class="n">str</span> <span class="n">dataUsingEncoding</span><span class="o">:</span><span class="n">NSUTF8StringEncoding</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Number</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'>    <span class="c1">//比较浮点数</span>
+</span><span class='line'>  <span class="err">#</span><span class="n">define</span> <span class="n">FloatEqual</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">)</span>     <span class="p">(</span> <span class="n">fabs</span><span class="p">(</span> <span class="p">(</span><span class="n">f1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">f2</span><span class="p">)</span> <span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.0001</span> <span class="p">)</span>
+</span><span class='line'>  <span class="c1">//使数值在上下限内</span>
+</span><span class='line'>    <span class="err">#</span><span class="n">define</span> <span class="n">MID</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>                    <span class="p">(</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">?</span> <span class="n">x</span> <span class="o">:</span> <span class="p">(</span><span class="n">z</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="o">?</span> <span class="n">z</span> <span class="o">:</span> <span class="n">y</span><span class="p">)</span> <span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Notification</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'>    <span class="cm">/**</span>
+</span><span class='line'><span class="cm">  * 通知声明</span>
+</span><span class='line'><span class="cm">  */</span>
+</span><span class='line'>  <span class="err">#</span><span class="n">define</span> <span class="n">N_Dec</span><span class="p">(</span><span class="n">notification</span><span class="p">)</span> <span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="k">const</span> <span class="n">notification</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="cm">/**</span>
+</span><span class='line'><span class="cm">  * 通知定义</span>
+</span><span class='line'><span class="cm">  */</span>
+</span><span class='line'>  <span class="err">#</span><span class="n">define</span> <span class="n">N_Def</span><span class="p">(</span><span class="n">notification</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span> <span class="k">const</span> <span class="n">notification</span> <span class="o">=</span> <span class="err">@#</span><span class="n">notification</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Localization</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'>    <span class="err">#</span><span class="n">define</span> <span class="n">L</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="n">NSLocalizedString</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">nil</span><span class="p">)</span>
+</span><span class='line'>  <span class="c1">//用法</span>
+</span><span class='line'>  <span class="n">label</span><span class="p">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">L</span><span class="p">(</span><span class="err">@</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Debug &amp; Log</h3>
+
+<p>NSLog默认会在Debug和Release版都打印，如果希望Release版本不打印Log：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#ifdef DEBUG</span>
+</span><span class='line'>  <span class="err">#</span><span class="n">define</span> <span class="n">MyLog</span><span class="p">(</span> <span class="n">s</span><span class="p">,</span> <span class="p">...</span> <span class="p">)</span> <span class="n">NSLog</span><span class="p">(</span> <span class="err">@</span><span class="s">&quot;&lt;%@:%d&gt; %@&quot;</span><span class="p">,</span> <span class="p">[[</span><span class="n">NSString</span> <span class="n">stringWithUTF8String</span><span class="o">:</span><span class="n">__FILE__</span><span class="p">]</span> <span class="n">lastPathComponent</span><span class="p">],</span> <span class="n">__LINE__</span><span class="p">,</span>  <span class="p">[</span><span class="n">NSString</span> <span class="n">stringWithFormat</span><span class="o">:</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="err">##</span><span class="n">__VA_ARGS__</span><span class="p">]</span> <span class="p">)</span>
+</span><span class='line'><span class="cp">#else</span>
+</span><span class='line'>  <span class="err">#</span><span class="n">define</span> <span class="n">MyLog</span><span class="p">(</span> <span class="n">s</span><span class="p">,</span> <span class="p">...</span> <span class="p">)</span>
+</span><span class='line'><span class="cp">#endif</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>App</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'>    <span class="cm">/**</span>
+</span><span class='line'><span class="cm">  * 是否内测版本</span>
+</span><span class='line'><span class="cm">  */</span>
+</span><span class='line'>  <span class="err">#</span><span class="n">define</span> <span class="n">IsInternalApp</span> <span class="p">([[</span><span class="n">NSBundle</span> <span class="n">mainBundle</span><span class="p">].</span><span class="n">bundleIdentifier</span> <span class="n">isEqualToString</span><span class="o">:</span><span class="err">@</span><span class="s">&quot;com.inc.enterprise.proj&quot;</span><span class="p">])</span>
+</span><span class='line'>  
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br/><p>转载请注明：<a href='http://like.lessfun.com'>大众点赞 - 沉迷的大多数</a> &raquo; <a href='http://like.lessfun.com/blog/2014/09/18/10-useful-macros-in-objective-c-develop/'>http://like.lessfun.com/blog/2014/09/18/10-useful-macros-in-objective-c-develop/</a></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[IMDB Top 250合辑 TLF-MiniSD收藏版]]></title>

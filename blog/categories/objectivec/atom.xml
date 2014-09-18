@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ObjectiveC | 大众点赞 - 沉迷的大多数]]></title>
+  <link href="http://like.lessfun.com/blog/categories/objectivec/atom.xml" rel="self"/>
+  <link href="http://like.lessfun.com/"/>
+  <updated>2014-09-18T17:29:00+08:00</updated>
+  <id>http://like.lessfun.com/</id>
+  <author>
+    <name><![CDATA[TinyToy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Objective C提高开发效率的10个实用的宏定义]]></title>
+    <link href="http://like.lessfun.com/blog/2014/09/18/10-useful-macros-in-objective-c-develop/"/>
+    <updated>2014-09-18T15:59:36+08:00</updated>
+    <id>http://like.lessfun.com/blog/2014/09/18/10-useful-macros-in-objective-c-develop</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/images/develop/lessfun_c_macros.gif" title="&lsquo;c macros&rsquo; &lsquo;c macros&rsquo;" ></p>
+
+<p>在类C语言中，宏的存在一直具有争议性，支持者觉得宏可以大大提高效率，使代码更简洁，用起来得心应手；反对者则认为，宏使得变量失去了类型，并且难以调试，降低了代码的可读性。这里我不准备探讨宏本身的意义，只想说明，在使用Objective C开发iOS项目时，这10个实用的宏，可以大大地提高你的开发效率，并且不影响可读性。</p>
+
+<!--more-->
+
+
+<p>Objective C的语法十分冗余，命名也是长不忍睹，虽然有自动补全，但是写起来还是很不方便，而宏定义就是为解决这些烦恼而生。如果你是宏定义一生黑，也可以用函数替换。</p>
+
+<p>以下宏定义保存在一个文件<code>YourMacro.h</code>中，并且在预编译头文件xx-Prefix.pch中#import，就可以在全局工程中使用了。</p>
+
+<h3>Device Info</h3>
+
+<p>判断设备类型：</p>
+
+<p>``` c</p>
+
+<pre><code>#define IsIPad   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IsIPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+</code></pre>
+
+<p>```</p>
+
+<h3>System Version</h3>
+
+<p>获取系统版本信息：</p>
+
+<p>``` c</p>
+
+<pre><code>#define SystemVersionLessThan(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+</code></pre>
+
+<p>```</p>
+
+<p>例如，判断iOS版本，是否低于iOS7：</p>
+
+<p>``` c</p>
+
+<pre><code>if (SystemVersionLessThan(@"7.0")) {
+    return;
+}
+</code></pre>
+
+<p>```</p>
+
+<h3>UI</h3>
+
+<p>判断是否为高清屏：</p>
+
+<p>``` c</p>
+
+<pre><code>#define IsRetina  ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] &amp;&amp; [[UIScreen mainScreen] scale] &gt;= 2)
+</code></pre>
+
+<p>```</p>
+
+<h3>Color</h3>
+
+<p>``` c</p>
+
+<pre><code>#define Color_RGB(r, g, b) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:1]
+#define Color_RGBA(r, g, b, a) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a]
+
+//用法
+view.backgroundColor = Color_RGB(0, 0, 0);
+</code></pre>
+
+<p>```</p>
+
+<h3>NSString</h3>
+
+<p>``` c</p>
+
+<pre><code>#define NSStringFromInt(d) [NSString stringWithFormat:@"%d", (d)]
+#define NSStringFromLong(d) [NSString stringWithFormat:@"%lld", (d)]
+#define NSStringConcat(str1, str2) [NSString stringWithFormat:@"%@%@", (str1), (str2)]
+#define NSStringFromNSData(data) [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]
+#define NSDataFromNSString(str) [str dataUsingEncoding:NSUTF8StringEncoding]
+</code></pre>
+
+<p>```</p>
+
+<h3>Number</h3>
+
+<p>``` c</p>
+
+<pre><code>//比较浮点数
+#define FloatEqual(f1, f2)     ( fabs( (f1) - (f2) ) &lt; 0.0001 )
+//使数值在上下限内
+#define MID(x, y, z)                    ( y &lt; x ? x : (z &lt; y ? z : y) )
+</code></pre>
+
+<p>```</p>
+
+<h3>Notification</h3>
+
+<p>``` c</p>
+
+<pre><code>/**
+ * 通知声明
+ */
+#define N_Dec(notification) extern NSString * const notification
+
+/**
+ * 通知定义
+ */
+#define N_Def(notification) NSString * const notification = @#notification
+</code></pre>
+
+<p>```</p>
+
+<h3>Localization</h3>
+
+<p>``` c</p>
+
+<pre><code>#define L(key) NSLocalizedString(key, nil)
+//用法
+label.text = L(@"Hello");
+</code></pre>
+
+<p>```</p>
+
+<h3>Debug &amp; Log</h3>
+
+<p>NSLog默认会在Debug和Release版都打印，如果希望Release版本不打印Log：</p>
+
+<p>``` c</p>
+
+<pre><code>#ifdef DEBUG
+    #define MyLog( s, ... ) NSLog( @"&lt;%@:%d&gt; %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__,  [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+    #define MyLog( s, ... )
+#endif
+</code></pre>
+
+<p>```</p>
+
+<h3>App</h3>
+
+<p>``` c</p>
+
+<pre><code>/**
+ * 是否内测版本
+ */
+#define IsInternalApp ([[NSBundle mainBundle].bundleIdentifier isEqualToString:@"com.inc.enterprise.proj"])
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>

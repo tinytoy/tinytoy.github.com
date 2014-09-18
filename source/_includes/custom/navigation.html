@@ -10,7 +10,15 @@
           <li{% if page.url == '/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/">首页</a></li>
 
           <li{% if page.url == '/blog/categories/zi-xun/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/zi-xun">资讯</a></li>
-          <li{% if page.url == '/blog/categories/kai-fa/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/kai-fa">开发</a></li>
+          <li class="has-dropdown{% if page.url == '/develop/index.html' %} active{% endif %}">
+            <a href="{{ root_url }}/develop">开发</a>
+
+            <ul class="dropdown">
+              <li><a href="{{ root_url }}/blog/categories/ObjectiveC">Objective C</a></li>
+            </ul>
+
+          </li>
+
           <li{% if page.url == '/blog/categories/ji-qiao/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/ji-qiao">技巧</a></li>
           <li{% if page.url == '/blog/categories/wan-yi/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/blog/categories/wan-yi">玩意</a></li>
           <li{% if page.url == '/money/index.html' %} class="active"{% endif %}><a href="{{ root_url }}/money">财务自由</a></li>

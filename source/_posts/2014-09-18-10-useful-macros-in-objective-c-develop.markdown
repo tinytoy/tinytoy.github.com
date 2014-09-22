@@ -3,8 +3,8 @@ layout: post
 title: "Objective C提高开发效率的10个实用的宏定义"
 date: 2014-09-18 15:59:36 +0800
 comments: true
-categories: [开发, ObjectiveC]
-tags: [develop, ios, objc]
+categories: [开发, ObjectiveC, iOS]
+tags: [develop, ios, objectivec]
 keywords: Objective C, 宏, iOS
 description: 在使用Objective C开发iOS项目时，用上这10个实用的宏，可以有效提高开发效率，简洁代码。
 ---

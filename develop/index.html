@@ -10,7 +10,8 @@
   <meta name="author" content="TinyToy">
 
   
-  <meta name="description" content="在类C语言中，宏的存在一直具有争议性，支持者觉得宏可以大大提高效率，使代码更简洁，用起来得心应手；反对者则认为，宏使得变量失去了类型，并且难以调试，降低了代码的可读性。这里我不准备探讨宏本身的意义，只想说明，在使用Objective C开发iOS项目时，这10个实用的宏， &hellip;">
+  <meta name="description" content="本文为翻译整理。来源: Symbolicating iPhone App Crash Reports 对于App的崩溃分析，一般有两种情形： App在本机构建、打包（所以本机已经有了对应的符号表）
+App在别的机器上构建、打包（需要下载.dSYM符号文件） ">
   
 
   <meta name="HandheldFriendly" content="True">
@@ -171,9 +172,67 @@
 
       
 
+    
+
+      
+
         
           
         
+          
+              
+              <article>
+                
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/09/22/symbolicating-ios-app-crash-reports/">iOS App 崩溃报告符号化，.ips崩溃报告文件分析</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<i class="fa fa-calendar-o"></i> <time datetime="2014-09-22T10:22:22+08:00" pubdate data-updated="true">2014-09-22, Mon</time> 
+        
+        | <a href="/blog/2014/09/22/symbolicating-ios-app-crash-reports/#comments">评论</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>本文为翻译整理。来源: <a href="http://stackoverflow.com/questions/1460892/symbolicating-iphone-app-crash-reports">Symbolicating iPhone App Crash Reports</a></p>
+
+<p>对于App的崩溃分析，一般有两种情形：</p>
+
+<ul>
+<li>App在本机构建、打包（所以本机已经有了对应的符号表）</li>
+<li>App在别的机器上构建、打包（需要下载.dSYM符号文件）</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" class="button tiny radius" href="/blog/2014/09/22/symbolicating-ios-app-crash-reports/">继续阅读 &rarr;</a>
+    </footer>
+  
+
+
+              </article>
+              
+              <hr>
+              
           
               
               <article>
@@ -252,10 +311,11 @@
   <h1>分类</h1>
   <ul id="categories">
     <li class='category'><a href='/blog/categories/imdb/'>IMDB (1)</a></li>
-<li class='category'><a href='/blog/categories/objectivec/'>ObjectiveC (1)</a></li>
+<li class='category'><a href='/blog/categories/objectivec/'>ObjectiveC (2)</a></li>
+<li class='category'><a href='/blog/categories/ios/'>iOS (2)</a></li>
 <li class='category'><a href='/blog/categories/shi-yao-hao-chi/'>什么好吃 (1)</a></li>
 <li class='category'><a href='/blog/categories/jin-wan-kan-sha/'>今晚看啥 (3)</a></li>
-<li class='category'><a href='/blog/categories/kai-fa/'>开发 (1)</a></li>
+<li class='category'><a href='/blog/categories/kai-fa/'>开发 (2)</a></li>
 <li class='category'><a href='/blog/categories/wan-yi/'>玩意 (1)</a></li>
 <li class='category'><a href='/blog/categories/dian-ying/'>电影 (3)</a></li>
 <li class='category'><a href='/blog/categories/mei-shi/'>美食 (1)</a></li>
@@ -265,6 +325,10 @@
 <section>
   <h1>最近发布 <i class="fa fa-edit"></i></h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/09/22/symbolicating-ios-app-crash-reports/">iOS App 崩溃报告符号化，.ips崩溃报告文件分析</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/09/20/movie-tuyas-marriage/">今晚看啥 - 《图雅的婚事》，王全安导演荣获第57届柏林国际电影节金熊奖的好片</a>

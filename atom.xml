@@ -4,7 +4,7 @@
   <title><![CDATA[大众点赞 - 沉迷的大多数]]></title>
   <link href="http://like.lessfun.com/atom.xml" rel="self"/>
   <link href="http://like.lessfun.com/"/>
-  <updated>2014-09-20T01:04:46+08:00</updated>
+  <updated>2014-09-22T11:17:04+08:00</updated>
   <id>http://like.lessfun.com/</id>
   <author>
     <name><![CDATA[TinyToy]]></name>
@@ -12,6 +12,63 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[iOS App 崩溃报告符号化，.ips崩溃报告文件分析]]></title>
+    <link href="http://like.lessfun.com/blog/2014/09/22/symbolicating-ios-app-crash-reports/"/>
+    <updated>2014-09-22T10:22:22+08:00</updated>
+    <id>http://like.lessfun.com/blog/2014/09/22/symbolicating-ios-app-crash-reports</id>
+    <content type="html"><![CDATA[<p>本文为翻译整理。来源: <a href="http://stackoverflow.com/questions/1460892/symbolicating-iphone-app-crash-reports">Symbolicating iPhone App Crash Reports</a></p>
+
+<p>对于App的崩溃分析，一般有两种情形：</p>
+
+<ul>
+<li>App在本机构建、打包（所以本机已经有了对应的符号表）</li>
+<li>App在别的机器上构建、打包（需要下载.dSYM符号文件）</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>1. App在本机构建、打包</h3>
+
+<p>由于我们本机在构建过程中已经生成了符号信息，所以符号化崩溃文件的过程很简单：</p>
+
+<ol>
+<li>重命名崩溃报告文件为<code>.crash</code>后缀（对于从Windows导出的崩溃文件适用）</li>
+<li>打开<code>Xcode</code> &ndash; <code>Organizer</code> &ndash; <code>Device Logs</code></li>
+<li>点击<code>import</code>，导入.crash文件</li>
+</ol>
+
+
+<p>这时就可以看到符号化了的崩溃日记。</p>
+
+<h3>2. App在别的机器构建、打包</h3>
+
+<p>首先我们从构建机器下载对应的app和.dSYM文件，为了结构清晰，可以和.crash文件放在同一个目录，如<code>CrashReport</code>。接下来需要通过终端完成：</p>
+
+<ol>
+<li>用<code>cd</code>命令切换到<code>CrashReport</code>目录</li>
+<li>输入<code>atos -arch armv7  -o 'APPNAME.app'/'APPNAME'</code></li>
+<li>这时可以看到光标闪动，被atos命令控制住了。</li>
+<li>输入崩溃的堆栈地址，如：<code>0x0003b508</code>，可以看到打印出来的错误信息，见下面：</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>  MyMac:CrashReport MyMac<span class="nv">$ </span>atos -arch armv7 -o <span class="s1">&#39;myapp.app&#39;</span>/<span class="s1">&#39;myapp&#39;</span>
+</span><span class='line'>  0x000cdc32 ;崩溃地址
+</span><span class='line'>  +<span class="o">[</span>UMANUtil sha1WithData:<span class="o">]</span> <span class="o">(</span>in kiwi<span class="o">)</span> + 86 ;对应的代码
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br/><p>转载请注明：<a href='http://like.lessfun.com'>大众点赞 - 沉迷的大多数</a> &raquo; <a href='http://like.lessfun.com/blog/2014/09/22/symbolicating-ios-app-crash-reports/'>http://like.lessfun.com/blog/2014/09/22/symbolicating-ios-app-crash-reports/</a></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[今晚看啥 - 《图雅的婚事》，王全安导演荣获第57届柏林国际电影节金熊奖的好片]]></title>

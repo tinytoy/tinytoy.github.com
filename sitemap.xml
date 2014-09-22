@@ -20,11 +20,15 @@
         <loc>
             http://like.lessfun.com/blog/2014/09/18/10-useful-macros-in-objective-c-develop/
         </loc>
-        <lastmod>2014-09-18T17:24:32+08:00</lastmod>
+        <lastmod>2014-09-22T10:44:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://like.lessfun.com/blog/2014/09/20/movie-tuyas-marriage/</loc>
         <lastmod>2014-09-20T01:03:20+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://like.lessfun.com/blog/2014/09/22/symbolicating-ios-app-crash-reports/</loc>
+        <lastmod>2014-09-22T11:16:05+08:00</lastmod>
     </url>
     <url>
         <loc>http://like.lessfun.com/about/</loc>
@@ -32,19 +36,19 @@
     </url>
     <url>
         <loc>http://like.lessfun.com/blog/archives/</loc>
-        <lastmod>2014-09-20T01:03:20+08:00</lastmod>
+        <lastmod>2014-09-22T11:16:05+08:00</lastmod>
     </url>
     <url>
         <loc>http://like.lessfun.com/develop/</loc>
-        <lastmod>2014-09-20T01:03:20+08:00</lastmod>
+        <lastmod>2014-09-22T11:16:05+08:00</lastmod>
     </url>
     <url>
         <loc>http://like.lessfun.com/food/</loc>
-        <lastmod>2014-09-20T01:03:20+08:00</lastmod>
+        <lastmod>2014-09-22T11:16:05+08:00</lastmod>
     </url>
     <url>
         <loc>http://like.lessfun.com/</loc>
-        <lastmod>2014-09-20T01:03:20+08:00</lastmod>
+        <lastmod>2014-09-22T11:16:05+08:00</lastmod>
     </url>
     <url>
         <loc>http://like.lessfun.com/robots.txt</loc>
@@ -52,6 +56,6 @@
     </url>
     <url>
         <loc>http://like.lessfun.com/video/</loc>
-        <lastmod>2014-09-20T01:03:20+08:00</lastmod>
+        <lastmod>2014-09-22T11:16:05+08:00</lastmod>
     </url>
 </urlset>

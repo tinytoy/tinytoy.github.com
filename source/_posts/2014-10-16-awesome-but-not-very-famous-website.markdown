@@ -3,7 +3,7 @@ layout: post
 title: "神奇、有意思、让人震惊却不为人所知的网站"
 date: 2014-10-16 16:21:53 +0800
 comments: true
-categories: [有意思，网站]
+categories: [有意思, 网站]
 tags: [有意思, 网站]
 keywords: 
 description: 

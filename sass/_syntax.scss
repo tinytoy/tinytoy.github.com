@@ -11,7 +11,7 @@ figure.code{
     table{
       width: 100%;
       max-width: 100%;
-      background: $highlight-bg;
+      background: $base02;
       border: 0;
       margin-bottom: 0;
       .line-number{
@@ -26,7 +26,7 @@ figure.code{
   }
 }
 
-.c      { color: $base01 !important; font-style: italic !important; }                     /* Comment */
+.c      { color: $base01 !important; }                     /* Comment */
 .cm     { color: $base01 !important; font-style: italic !important; }                     /* Comment.Multiline */
 .cp     { color: $base01 !important; font-style: italic !important;  }                     /* Comment.Preproc */
 .c1     { color: $base01 !important; font-style: italic !important; }                     /* Comment.Single */

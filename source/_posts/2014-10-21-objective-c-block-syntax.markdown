@@ -21,31 +21,31 @@ Objective C以语法臃肿难记著名，其中Block的写法更是让人蛋疼�
 
 ###用作本地变量
 
-``` c
+``` m
     returnType (^blockName)(parameterTypes) = ^returnType(parameters) {...};
 ```
 
 ###用作属性
 
-``` c
+``` m
     @property (nonatomic, copy) returnType (^blockName)(parameterTypes);
 ```
 
 ###用作方法参数声明
 
-``` c
+``` m
     - (void)someMethodThatTakesABlock:(returnType (^)(parameterTypes))blockName;
 ```
 
 ###被方法调用时
 
-``` c
+``` m
     [someObject someMethodThatTakesABlock: ^returnType (parameters) {...}];
 ```
 
 ###用作Typedef定义
 
-``` c
+``` m
     typedef returnType (^TypeName)(parameterTypes);
     TypeName blockName = ^returnType(parameters) {...};
 ```

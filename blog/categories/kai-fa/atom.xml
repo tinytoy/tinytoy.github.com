@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 开发 | 大众点赞 - 沉迷的大多数]]></title>
   <link href="http://like.lessfun.com/blog/categories/kai-fa/atom.xml" rel="self"/>
   <link href="http://like.lessfun.com/"/>
-  <updated>2014-10-17T14:01:24+08:00</updated>
+  <updated>2014-10-21T18:58:19+08:00</updated>
   <id>http://like.lessfun.com/</id>
   <author>
     <name><![CDATA[TinyToy]]></name>
@@ -12,6 +12,70 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Objective C中Block的几种常用写法]]></title>
+    <link href="http://like.lessfun.com/blog/2014/10/21/objective-c-block-syntax/"/>
+    <updated>2014-10-21T18:33:29+08:00</updated>
+    <id>http://like.lessfun.com/blog/2014/10/21/objective-c-block-syntax</id>
+    <content type="html"><![CDATA[<blockquote><p>孔乙己显出极高兴的样子，将两个指头的长指甲敲着柜台，点头说，“对呀对呀！……回字有四样写法,你知道么？”</p></blockquote>
+
+<p>现在，Block有多少种写法，你知道吗？Xcode的智能提示与补全虽然强大，但总有需要手写的时候，比如Block的声明与定义，这就是考验你记忆力的时候了。</p>
+
+<!--more-->
+
+
+<p>Objective C以语法臃肿难记著名，其中Block的写法更是让人蛋疼，有个健忘的外国人不堪折磨，特地建立了一个网站：<a href="http://fuckingblocksyntax.com/">How Do I Declare A Block in Objective-C?</a></p>
+
+<p>总结了几种常用的Block的声明方法：</p>
+
+<h3>用作本地变量</h3>
+
+<p>``` c</p>
+
+<pre><code>returnType (^blockName)(parameterTypes) = ^returnType(parameters) {...};
+</code></pre>
+
+<p>```</p>
+
+<h3>用作属性</h3>
+
+<p>``` c</p>
+
+<pre><code>@property (nonatomic, copy) returnType (^blockName)(parameterTypes);
+</code></pre>
+
+<p>```</p>
+
+<h3>用作方法参数声明</h3>
+
+<p>``` c</p>
+
+<pre><code>- (void)someMethodThatTakesABlock:(returnType (^)(parameterTypes))blockName;
+</code></pre>
+
+<p>```</p>
+
+<h3>被方法调用时</h3>
+
+<p>``` c</p>
+
+<pre><code>[someObject someMethodThatTakesABlock: ^returnType (parameters) {...}];
+</code></pre>
+
+<p>```</p>
+
+<h3>用作Typedef定义</h3>
+
+<p>``` c</p>
+
+<pre><code>typedef returnType (^TypeName)(parameterTypes);
+TypeName blockName = ^returnType(parameters) {...};
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[最受欢迎的iOS开源库，以及找到最热门开源框架的方法]]></title>

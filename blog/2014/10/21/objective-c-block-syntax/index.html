@@ -182,28 +182,28 @@
 <h3>用作本地变量</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">returnType</span> <span class="p">(</span><span class="o">^</span><span class="n">blockName</span><span class="p">)(</span><span class="n">parameterTypes</span><span class="p">)</span> <span class="o">=</span> <span class="o">^</span><span class="n">returnType</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span> <span class="p">{...};</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">returnType</span> <span class="p">(</span><span class="o">^</span><span class="n">blockName</span><span class="p">)(</span><span class="n">parameterTypes</span><span class="p">)</span> <span class="o">=</span> <span class="o">^</span><span class="n">returnType</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span> <span class="p">{...};</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
 <h3>用作属性</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="err">@</span><span class="n">property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span> <span class="n">returnType</span> <span class="p">(</span><span class="o">^</span><span class="n">blockName</span><span class="p">)(</span><span class="n">parameterTypes</span><span class="p">);</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span> <span class="n">returnType</span> <span class="p">(</span><span class="o">^</span><span class="n">blockName</span><span class="p">)(</span><span class="n">parameterTypes</span><span class="p">);</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
 <h3>用作方法参数声明</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">someMethodThatTakesABlock</span><span class="o">:</span><span class="p">(</span><span class="n">returnType</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">parameterTypes</span><span class="p">))</span><span class="n">blockName</span><span class="p">;</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">someMethodThatTakesABlock:</span><span class="p">(</span><span class="n">returnType</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">parameterTypes</span><span class="p">))</span><span class="nv">blockName</span><span class="p">;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
 <h3>被方法调用时</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="p">[</span><span class="n">someObject</span> <span class="n">someMethodThatTakesABlock</span><span class="o">:</span> <span class="o">^</span><span class="n">returnType</span> <span class="p">(</span><span class="n">parameters</span><span class="p">)</span> <span class="p">{...}];</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="p">[</span><span class="n">someObject</span> <span class="nl">someMethodThatTakesABlock:</span> <span class="o">^</span><span class="n">returnType</span> <span class="p">(</span><span class="n">parameters</span><span class="p">)</span> <span class="p">{...}];</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -211,7 +211,7 @@
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="k">typedef</span> <span class="nf">returnType</span> <span class="p">(</span><span class="o">^</span><span class="n">TypeName</span><span class="p">)(</span><span class="n">parameterTypes</span><span class="p">);</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">typedef</span> <span class="nf">returnType</span> <span class="p">(</span><span class="o">^</span><span class="n">TypeName</span><span class="p">)(</span><span class="n">parameterTypes</span><span class="p">);</span>
 </span><span class='line'><span class="n">TypeName</span> <span class="n">blockName</span> <span class="o">=</span> <span class="o">^</span><span class="n">returnType</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span> <span class="p">{...};</span>
 </span></code></pre></td></tr></table></div></figure>
 

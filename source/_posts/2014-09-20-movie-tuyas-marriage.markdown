@@ -4,7 +4,7 @@ title: "今晚看啥 - 《图雅的婚事》，王全安导演荣获第57届柏�
 date: 2014-09-20 00:26:53 +0800
 comments: true
 categories: [今晚看啥, 电影]
-tags: [movie, douban]
+tags: [movie, douban, 2006, MiniSD]
 keywords: 今晚看啥, 高分电影, TLF, MiniSD, 王全安
 description: 《图雅的婚事》是王全安导演2006年上映的电影，本片荣获2007年柏林国际电影节金熊奖。
 ---
